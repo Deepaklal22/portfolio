@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deepak Lal J — Portfolio</title>
+  <meta name="description" content="Portfolio of Deepak Lal J — Web Developer | Python | PHP | Laravel | MySQL" />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --maxw:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.05), transparent 8%),
+        radial-gradient(1000px 400px at 90% 90%, rgba(99,102,241,0.03), transparent 6%),
+        var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .container{max-width:var(--maxw); margin:40px auto; padding:28px;}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; margin-bottom:28px;
+    }
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{
+      width:64px; height:64px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(135deg,var(--accent), #7c3aed);
+      font-weight:700; font-size:20px; color:#031427;
+      box-shadow:0 6px 22px rgba(6,182,212,0.06), inset 0 -6px 18px rgba(0,0,0,0.12);
+    }
+    h1{margin:0; font-size:20px}
+    .sub{color:var(--muted); font-size:13px; margin-top:4px}
+
+    nav{display:flex; gap:12px; align-items:center}
+    .btn{
+      background:var(--glass); padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
+      color:inherit; text-decoration:none; font-size:14px; cursor:pointer;
+    }
+    .btn.primary{
+      background:linear-gradient(90deg,var(--accent), #7c3aed);
+      color:#031427; border:0; font-weight:600;
+      box-shadow:0 8px 30px rgba(7,89,133,0.12);
+    }
+
+    main{display:grid; grid-template-columns: 340px 1fr; gap:24px; align-items:start}
+    /* Left column (sidebar) */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius); padding:18px; border:1px solid rgba(255,255,255,0.03);
+    }
+    .profile{
+      display:flex; gap:12px; align-items:center;
+    }
+    .avatar{
+      width:84px; height:84px; border-radius:12px;
+      background:linear-gradient(135deg,#7c3aed, var(--accent));
+      display:flex; align-items:center; justify-content:center; font-weight:700; font-size:28px; color:#021019;
+    }
+    .contact{margin-top:12px; font-size:14px; color:var(--muted); line-height:1.5}
+    .links a{display:block; color:var(--accent); text-decoration:none; margin-top:6px; font-size:14px}
+    .skills{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .skill{background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:999px; font-size:13px; color:var(--muted)}
+
+    /* Right column (content) */
+    .section{margin-bottom:18px}
+    .headline{display:flex; justify-content:space-between; align-items:center}
+    .headline h2{margin:0; font-size:16px}
+    .muted{color:var(--muted); font-size:14px}
+
+    .card.project{
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .project-title{font-weight:700; font-size:15px}
+    .project-desc{color:var(--muted); font-size:14px}
+    .project-meta{font-size:13px; color:var(--muted)}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{font-size:12px; background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px; color:var(--muted)}
+
+    .timeline{display:flex; flex-direction:column; gap:12px; margin-top:10px}
+    .timeline .item{background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.02) }
+    .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:10px}
+
+    /* contact form */
+    form{display:grid; gap:10px}
+    input,textarea{
+      background:transparent; border:1px solid rgba(255,255,255,0.04); padding:10px; border-radius:8px; color:inherit; font-size:14px;
+    }
+    textarea{min-height:100px; resize:vertical}
+    footer{margin-top:28px; color:var(--muted); font-size:13px; text-align:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      main{grid-template-columns:1fr; }
+      .avatar{width:72px;height:72px}
+      .logo{width:52px;height:52px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">DL</div>
+        <div>
+          <h1>Deepak Lal J</h1>
+          <div class="sub">MCA | Web Developer · Python · PHP · Laravel</div>
+        </div>
+      </div>
+
+      <nav>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#experience">Experience</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn primary" href="/mnt/data/deepakdesignresume.pdf" download>Download Resume</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- LEFT SIDEBAR -->
+      <aside class="card">
+        <div class="profile">
+          <div class="avatar">DL</div>
+          <div>
+            <strong style="font-size:16px">Deepak Lal J</strong>
+            <div class="muted" style="margin-top:6px">Fresher · Web & Software Developer</div>
+          </div>
+        </div>
+
+        <div class="contact" style="margin-top:14px">
+          <div><strong>Email:</strong> j.deepak22lal@gmail.com</div>
+          <div><strong>Phone:</strong> +91 77086 95429</div>
+          <div style="margin-top:6px" class="links">
+            <a href="https://www.linkedin.com/in/deepak-lal-821717264" target="_blank" rel="noopener">LinkedIn • deepak-lal</a>
+            <a href="https://github.com/Deepaklal22" target="_blank" rel="noopener">GitHub • Deepaklal22</a>
+            <a href="#contact">Contact form</a>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div style="font-weight:700; margin-bottom:8px">Skills</div>
+          <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Bootstrap</div>
+            <div class="skill">PHP</div>
+            <div class="skill">Laravel</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Python</div>
+            <div class="skill">C++</div>
+            <div class="skill">Java</div>
+            <div class="skill">Figma</div>
+            <div class="skill">Canva</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div style="font-weight:700; margin-bottom:8px">Locations</div>
+          <div class="muted">Kurusady, Kanyakumari</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div style="font-weight:700; margin-bottom:8px">Achievements</div>
+          <div class="muted">State-level Football Championship</div>
+          <div class="muted">District-level Athletics & Football</div>
+        </div>
+      </aside>
+
+      <!-- RIGHT CONTENT -->
+      <section>
+        <div class="card section">
+          <div class="headline">
+            <div>
+              <h2>About</h2>
+              <div class="muted" style="margin-top:6px">I’m a passionate fresher interested in IT and web development. I enjoy learning new technologies and building useful applications that make tasks easier and more effective. I aim to grow my skills and contribute meaningfully to projects and teams.</div>
+            </div>
+            <div style="text-align:right">
+              <div class="muted">Masters of Computer Application</div>
+              <div class="muted">CGPA: 7.8</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="projects" class="card project section">
+          <div class="headline">
+            <h2>Selected Projects</h2>
+            <div class="muted">HTML · CSS · PHP · Laravel · MySQL</div>
+          </div>
+
+          <div class="timeline">
+            <div class="item">
+              <div class="project-title">Orphanage Management System</div>
+              <div class="project-meta">Frontend: HTML/CSS | Backend: Java | DB: MySQL</div>
+              <div class="project-desc">Built an orphanage management system with role-based access (admin, donor, user). Features include registration, donations (education & food), feedback, event management, and child records.</div>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">MySQL</span></div>
+            </div>
+
+            <div class="item">
+              <div class="project-title">Alumni Management System (ASP.NET)</div>
+              <div class="project-meta">Technology: ASP.NET | Focus: CRUD, Reporting</div>
+              <div class="project-desc">Developed an alumni system to record alumni details, search/filter alumni, and generate reports. Also conducted runtime analysis case studies for sorting algorithms during coursework.</div>
+              <div class="tags"><span class="tag">ASP.NET</span><span class="tag">C#</span></div>
+            </div>
+
+            <div class="item">
+              <div class="project-title">Event Management (In Progress)</div>
+              <div class="project-meta">Frontend: HTML, CSS, Bootstrap | Backend: PHP (Laravel) | DB: MySQL</div>
+              <div class="project-desc">Working on a full-stack event management application using Laravel for dynamic event pages, bookings, and admin dashboards.</div>
+              <div class="tags"><span class="tag">Laravel</span><span class="tag">Bootstrap</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="experience" class="card section">
+          <div class="headline">
+            <h2>Experience & Internships</h2>
+            <div class="muted"></div>
+          </div>
+
+          <div class="timeline">
+            <div class="item">
+              <strong>Zworks Technology — Web Development Intern</strong>
+              <div class="muted">May 2025</div>
+              <div style="margin-top:8px" class="muted">Worked on responsive websites using HTML, CSS, PHP, Bootstrap and practiced Laravel integration with MySQL for dynamic apps.</div>
+            </div>
+
+            <div class="item">
+              <strong>ShreeVijay Technology Solutions — Python Intern</strong>
+              <div class="muted">May 2024</div>
+              <div style="margin-top:8px" class="muted">Hands-on training in Python programming, debugging, and building small automation and application tasks.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card section">
+          <div class="headline">
+            <h2>Education</h2>
+            <div class="muted">Institutions & marks</div>
+          </div>
+
+          <div class="edu-grid">
+            <div class="item">
+              <strong>Master of Computer Application</strong>
+              <div class="muted">St. Joseph’s College — CGPA: 7.8</div>
+            </div>
+            <div class="item">
+              <strong>Bachelor of Computer Science</strong>
+              <div class="muted">St. Joseph’s College — CGPA: 7.7</div>
+            </div>
+            <div class="item">
+              <strong>Higher Secondary Certificate</strong>
+              <div class="muted">Carmel School — 85%</div>
+            </div>
+            <div class="item">
+              <strong>Secondary School Leaving Certificate</strong>
+              <div class="muted">Carmel School — 79%</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact" class="card section">
+          <div class="headline">
+            <h2>Contact</h2>
+            <div class="muted">Reach out for collaborations, internships, or projects</div>
+          </div>
+
+          <form id="contactForm" onsubmit="return sendMessage(event)">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Your email" required />
+            <input type="text" id="subject" placeholder="Subject" />
+            <textarea id="message" placeholder="Write your message..." required></textarea>
+            <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:6px">
+              <button type="reset" class="btn">Reset</button>
+              <button type="submit" class="btn primary">Send message</button>
+            </div>
+            <div id="formMsg" style="margin-top:8px; color:var(--muted); font-size:13px"></div>
+          </form>
+        </div>
+
+        <footer>
+          <div>Portfolio created with data from the uploaded resume. :contentReference[oaicite:1]{index=1}</div>
+          <div style="margin-top:8px">© <span id="year"></span> Deepak Lal J — Kurusady, Kanyakumari</div>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Small interactive bits
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // This is a dummy form — show a sample success message and print to console.
+      const msg = "Thanks " + (name || "there") + "! Your message has been received. (This is a demo — implement backend to actually send.)";
+      document.getElementById('formMsg').textContent = msg;
+      console.log({
+        from: name,
+        email: email,
+        subject: subject,
+        message: message
+      });
+
+      // Reset after a pause to mimic sending
+      setTimeout(()=> {
+        document.getElementById('contactForm').reset();
+      }, 900);
+
+      return false;
+    }
+
+    // Optional: enable deep-linking to sections on load (if link contains hash)
+    (function(){
+      if(location.hash){
+        const el = document.querySelector(location.hash);
+        if(el) el.scrollIntoView({behavior:'smooth'});
+      }
+    })();
+  </script>
+</body>
+</html>
